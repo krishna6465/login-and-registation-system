@@ -1,0 +1,67 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+class reg
+{
+  char username[50];
+  int password;
+public:
+  void get ()
+  {
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter password: ";
+    cin >> password;
+
+  }
+  void print ()
+  {
+    cout << "\n\n** Entered Informtion **\n";
+    cout << "Username:  " << username;
+    cout << "\nPassword:  " << password;
+  }
+  void login ()
+  {
+    int n, pass;
+    char user[50];
+    cout << "\n\nPress  1  for login: ";
+    cin >> n;
+    switch (n)
+      {
+      case 1:
+      Enter:
+
+	cout << "\n\nenter your username : ";
+	cin >> user;
+	cout << "\nEnter your password : ";
+	cin >> pass;
+
+	if ((username == user) || (password == pass))
+	  {
+	    cout << "login sucessful";
+	  }
+
+	else
+	  {
+	    cout << "\nplease Re-enter username and password";
+
+	    goto Enter;
+	  }
+	break;
+
+      default:
+	cout << "wrong choice🥱";
+      }
+  }
+};
+
+
+int
+main ()
+{
+  reg obj;
+  obj.get ();
+  obj.print ();
+  obj.login ();
+  return 0;
+}
